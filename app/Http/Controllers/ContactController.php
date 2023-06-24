@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function page(){
-        return view('');
+    public function page()
+    {
+        return view('pages.contact');
     }
 
-    public function contactMe(){
-        return view('');
+    public function contactMe()
+    {
     }
-
-
 }
