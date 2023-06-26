@@ -16,6 +16,5 @@ class ProjectsController extends Controller
     {
 
         return  DB::table('projects')->get();
-
     }
 }

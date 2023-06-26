@@ -14,19 +14,16 @@ class HomeController extends Controller
 
     public function heroData()
     {
-        $heroData = DB::table('hero')->get();
-        return $heroData;
+        return DB::table('hero')->get();
     }
 
     public function aboutData()
     {
-        $aboutData = DB::table('abouts')->get();
-        return $aboutData;
+        return DB::table('abouts')->get();
     }
 
     public function socialData()
     {
-        $socialData = DB::table('socials')->get();
-        return $socialData;
+        return  DB::table('socials')->get();
     }
 }
