@@ -12,10 +12,10 @@ class ProjectsController extends Controller
         return view('pages.projects');
     }
 
-    public function projectInfo()
+    public function projectData()
     {
 
-        $projectInfo = DB::table('projects')->get();
-        return $projectInfo;
+        return  DB::table('projects')->get();
+
     }
 }
