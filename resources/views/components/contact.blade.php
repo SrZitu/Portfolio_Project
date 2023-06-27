@@ -78,7 +78,15 @@
             }
 
             let url = "/contactMe"
+
+            document.getElementById('loading-div').classList.remove('d-none');
+            document.getElementById('content-div').classList.add('d-none');
+
             let response = await axios.post(url, formData)
+            
+            document.getElementById('loading-div').classList.add('d-none');
+            document.getElementById('content-div').classList.remove('d-none');
+
             if (response.status === 200 && response.data === 1) {
                 alert('Submitted Successfully');
                 contactForm.reset();

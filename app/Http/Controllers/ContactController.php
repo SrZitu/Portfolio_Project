@@ -15,8 +15,7 @@ class ContactController extends Controller
     public function contactMe(Request $request)
 
     {
-     return DB::table('contacts')->insert($request->input());
 
-
+        return DB::table('contacts')->insert($request->input());
     }
 }
