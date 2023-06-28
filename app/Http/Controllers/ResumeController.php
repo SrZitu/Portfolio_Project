@@ -9,7 +9,8 @@ class ResumeController extends Controller
 {
     public function page()
     {
-        return view('pages.resume');
+        $seo=DB::table('seoproperties')->where('pageName','=','resume')->first();
+        return view('pages.resume',['seo'=>$seo]);
     }
 
     public function resumeLink()

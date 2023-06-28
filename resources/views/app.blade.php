@@ -4,6 +4,15 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
+    <title>{{$seo->title}}</title>
+    <meta name="description" content="{{$seo->description}}"/>
+    <meta name="keywords" content="{{$seo->keywords}}"/>
+
+    <meta name="og:site_name" content="{{$seo->ogSiteName}}"/>
+    <meta name="og:url" content="{{$seo->ogUrl}}"/>
+    <meta name="og:title" content="{{$seo->ogTitle}}"/>
+    <meta name="og:image" content="{{$seo->ogImage}}"/>
+    <meta name="og:description" content="{{$seo->ogDescription}}"/>
 
 
     <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />
