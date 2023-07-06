@@ -46,7 +46,7 @@
         try {
 
             let response = await axios.get(url);
-            
+
             response.data.forEach((item) => {
                 document.getElementById('experience-list').innerHTML += `
 

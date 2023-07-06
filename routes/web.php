@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProjectsController;
-use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
 
 //Pages Route
 Route::get('/',[HomeController::class,'page']);
@@ -36,3 +35,17 @@ Route::get('/skillsData',[ResumeController::class,'skillsData']);
 Route::get('/languageData',[ResumeController::class,'languageData']);
 Route::get('/projectData',[ProjectsController::class,'projectData']);
 Route::post('/contactMe',[ContactController::class,'contactMe']);
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
